@@ -1,14 +1,99 @@
-# Project Name
+# Image Smoothing Using Average Filters
 
-Image Smoothing Using Average Filters
+## 1. Introduction & Objective
 
-## Table of Contents
+This project demonstrates **image smoothing using average filters** in digital image processing. A grayscale image is processed using three different average filter sizes: **3×3, 5×5, and 7×7**.
 
-Introduction & Objective
-Requirements & Installation
-Methodology & Implementation
-Output, Result & Conclusion
+The main objectives are:
 
-## Installation
+* To perform image smoothing.
+* To implement average filtering using OpenCV.
+* To compare the effect of different filter sizes.
+* To understand how filtering reduces image details and noise.
 
-Download and install Python from.
+## 2. Methodology
+
+The project follows these steps:
+
+1. Read the input image.
+2. Convert the image into grayscale.
+3. Create average filter kernels of sizes:
+
+   * 3×3
+   * 5×5
+   * 7×7
+4. Apply the filters using `cv2.filter2D()`.
+5. Display the original and filtered images together.
+6. Compare the smoothing effects of the three filters.
+
+### Average Filter
+
+The average filter replaces each pixel with the average value of its neighboring pixels.
+
+For a 3×3 filter:
+
+```text
+1/9 × [1 1 1
+       1 1 1
+       1 1 1]
+```
+
+Similarly, 5×5 and 7×7 filters use `1/25` and `1/49` respectively.
+
+## 3. Installation & Requirements
+
+### Requirements
+
+* Python 3.x
+* OpenCV
+* NumPy
+* Matplotlib
+* Google Colab or Jupyter Notebook
+
+### Installation
+
+Install the required libraries using:
+
+```bash
+pip install opencv-python numpy matplotlib
+```
+
+For Google Colab:
+
+```python
+!pip install opencv-python numpy matplotlib
+```
+
+## 4. Implementation & Output
+
+The program uses:
+
+* `cv2.imread()` to read the image.
+* `np.ones()` to create the average filter kernels.
+* `cv2.filter2D()` to apply the filters.
+* `matplotlib.pyplot` to display the results.
+
+The output contains four images:
+
+1. Original Grayscale Image
+2. Average Filter (3×3)
+3. Average Filter (5×5)
+4. Average Filter (7×7)
+
+## 5. Result & Conclusion
+
+The project successfully performs image smoothing using average filters.
+
+The **3×3 filter** produces moderate smoothing, while the **5×5 and 7×7 filters** produce progressively stronger smoothing. As the filter size increases, more neighboring pixels are averaged, resulting in a smoother image with fewer fine details.
+
+### Applications
+
+* Noise reduction
+* Image preprocessing
+* Computer vision
+* Medical image processing
+* Object detection preprocessing
+
+## Author
+
+**Image Smoothing Using Average Filters**
